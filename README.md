@@ -1,5 +1,3 @@
-SYMPHONY Version 1.2.0 (Current) Release v1.2.0: 2016-12-13
-
 ## Installation
 1. Download the repository
 2. Install npm modules: `npm install`
