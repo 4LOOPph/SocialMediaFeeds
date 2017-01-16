@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <style>
     html,
@@ -53,6 +53,16 @@
         text-decoration: none;
         text-transform: uppercase;
     }
+    
+    .jumbotron {
+        text-align: center;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .jumbotron .btn {
+        padding: 14px 24px;
+        font-size: 21px;
+    }
     </style>
 </head>
 
@@ -67,6 +77,8 @@
                 <a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> FACEBOOK</a>
                 <a href="/twitter"><i class="fa fa-twitter" aria-hidden="true"></i> TWITTER</a>
             </div>
+            <br><br>
+            <p><a class="btn btn-lg btn-success btn-auth" href="/api/instagram_auth" role="button">Login with Instagram</a></p>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
@@ -77,6 +89,9 @@
         type: 'GET',
         success: function(response) {
             console.log('success responsesss: ', response);
+            if(response.response && response.response.length > 0){
+                $('.btn-auth').hide();
+            }
         },
         error: function(errors) {
             console.log('error responsesss: ', response);
